@@ -1,4 +1,4 @@
-version: '2.0'
+version: '3.1'
 services:
  
   #PHP Service
@@ -13,6 +13,11 @@ services:
     environment:
       SERVICE_NAME: app
       SERVICE_TAGS: dev
+      MYSQL_DATABASE: bitango
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_PASSWORD: root
+      MYSQL_USER: root
+      MYSQL_ALLOW_EMPTY_PASSWORD: "true"
     working_dir: /var/www/html/
     volumes:
       - ./:/var/www/html/
@@ -37,25 +42,24 @@ services:
  
   #MySQL Service
   db:
-    image: mysql:5.7.32
+    image: mysql
     container_name: db
-    restart: unless-stopped
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
     tty: true
     ports:
-      - "3306:3306"
+      - "3308:3306"
     environment:
       MYSQL_DATABASE: bitango
-      MYSQL_ROOT_PASSWORD: bitango
-      MYSQL_PASSWORD: bitango
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_PASSWORD: root
       MYSQL_USER: root
       SERVICE_TAGS: dev
       SERVICE_NAME: mysql
       MYSQL_ALLOW_EMPTY_PASSWORD: "true"
-    command:
-      - --default-authentication-plugin=mysql_native_password
     volumes:
       - dbdata:/var/lib/mysql/
-      - ./docker/mysql/my.cnf:/etc/mysql/my.cnf
+#      - ./docker/mysql/my.cnf:/etc/mysql/my.cnf
     networks:
       - app-network
  

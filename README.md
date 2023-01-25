@@ -1,4 +1,23 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+<p align="center">
+<a href="https://laravel.com" target="_blank">
+<img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo">
+</a>
+
+</p>
+<h2>Set up</h2>
+
+<p align="center">
+ <ul>
+    <li>Run composer install</li>
+    <li>Run npm install</li>
+    <li>Create db & Run php artisan migrate</li>
+    <li>Run npm run build</li>
+    <li>Run php artisan serve</li>
+ </ul>
+</p>
+<h2>Or use Docker</h2>
+<p align="center"> docker build && docker compose up</p>
+
 
 <p align="center">
 <a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
