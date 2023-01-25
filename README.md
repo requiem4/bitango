@@ -16,7 +16,14 @@
  </ul>
 </p>
 <h2>Or use Docker</h2>
-<p align="center"> docker build && docker compose up</p>
+<p align="center">
+<ul>
+    <li>docker build </li>
+    <li>docker compose up -d</li>
+    <li>You also might need to run <b>php artisan migrate</b> from app container to set up db</li>
+    <li>Also Run <b>npm run build</b></li>    
+ </ul>
+ </p>
 
 
 <p align="center">
